@@ -17,17 +17,30 @@ void motor_init(void)
 }
 
 
-void motor(void)
+void motor(int sentido)
 {
-    PORTD = 0x08;
-    __delay_ms(10);
-    
-    PORTD = 0x04;   
-    __delay_ms(10);
-    
-    PORTD = 0x02;
-    __delay_ms(10);
-   
-    PORTD = 0x01;
-    __delay_ms(10);       
+    if(sentido == 0)
+    {
+        char i = 0x01;
+        int n;
+        
+        for(n=0; n<4; n++)
+        {
+            PORTD = i<<n;
+            __delay_ms(10);
+        } 
+    }   
+        
+    if(sentido == 1)    
+    {
+        char i = 0x08;
+        int n;
+        
+        for(n=0; n<4; n++)
+        {
+            PORTD = i>>n;
+            __delay_ms(10);
+
+        } 
+    }
 }

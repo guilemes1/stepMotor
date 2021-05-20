@@ -2,6 +2,6 @@
 #define STEP_MOTOR
 
 void motor_init(void);
-void motor(void);
+void motor(int sentido);
 
 #endif
