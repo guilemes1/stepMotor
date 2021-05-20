@@ -8,8 +8,7 @@
 
 #include <xc.h>
 
-void main(void) 
+void motor (void)
 {
     
-    return;
 }
