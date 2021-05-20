@@ -8,7 +8,7 @@ Projeto de desenvolvimento de biblioteca para uso do Motor de Passo.
 
 * Microcontrolador utilizado: PIC16F887
 
-* Software para esquemático e simulaçao do programa: PSIMULIDE
+* Software para esquemático e simulaçao do programa: SIMULIDE
 
 ## Equipe
 
