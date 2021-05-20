@@ -4,7 +4,7 @@
 
 * Alice Freitas
 
-* Denilson
+* Denilson Freitas
 
 * Fábio Marquini
 
