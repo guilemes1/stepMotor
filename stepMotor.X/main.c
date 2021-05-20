@@ -8,6 +8,11 @@
 
 #include <xc.h>
 
-void main(void) {
+void main(void) 
+{
+    while( 1 )
+    {
+        
+    }
     return;
 }
