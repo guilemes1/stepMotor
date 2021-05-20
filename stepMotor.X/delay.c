@@ -5,8 +5,8 @@
  * Created on 3 de Fevereiro de 2021, 17:46
  */
 
-#include "config.h"
 #include <xc.h>
+#include "delay.h"
 
 void delay (unsigned int t)
 {

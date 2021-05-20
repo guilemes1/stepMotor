@@ -7,7 +7,7 @@
 
 
 #include <xc.h>
-#include "config.h"
+#include "delay.h"
 
 //***************** Interface com PORTs/Pinos
 #define LCD_BUS         LCDbits.BUS
