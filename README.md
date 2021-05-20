@@ -6,7 +6,7 @@
 
 * Denilson Freitas
 
-* Fábio Marquini
+* Fábio Marchini
 
 * Guilherme Lemes
 
