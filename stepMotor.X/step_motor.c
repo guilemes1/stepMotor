@@ -19,36 +19,34 @@ void motor_init(void)
 
 void motor(int pulsos, int sentido)
 {
+    pulsos = pulsos / 4;
+    int z;
+    int n;
+    
     if(sentido == 0)
-    {
-        int z;
-        
+    {   
         for(z = pulsos; z>0; z--)
-        {
+        {                
             char i = 0x01;
-            int n;
 
             for(n=0; n<4; n++)
             {
                 PORTD = i<<n;
-                __delay_ms(10);
+                __delay_ms(100);
             }
         }    
     }   
         
     if(sentido == 1)    
-    {
-        int z;
-        
+    {   
         for(z = pulsos; z>0; z--)
         {
             char i = 0x08;
-            int n;
 
             for(n=0; n<4; n++)
             {
                 PORTD = i>>n;
-                __delay_ms(10);
+                __delay_ms(100);
 
             }
         }    
