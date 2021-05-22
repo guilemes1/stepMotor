@@ -8,12 +8,12 @@
 #include <xc.h>
 #include "delay.h"
 
-#define MOTOR PORTD
+#define MOTOR PORTC
 
 void motor_init(void)
 {
-    TRISD = 0x00;
-    PORTD = 0x00;
+    TRISC = 0x00;
+    PORTC = 0x00;
 }
 
 
@@ -31,7 +31,7 @@ void motor(int pulsos, int sentido)
 
             for(n=0; n<4; n++)
             {
-                PORTD = i<<n;
+                PORTC = i<<n;
                 __delay_ms(100);
             }
         }    
@@ -45,7 +45,7 @@ void motor(int pulsos, int sentido)
 
             for(n=0; n<4; n++)
             {
-                PORTD = i>>n;
+                PORTC = i>>n;
                 __delay_ms(100);
 
             }
