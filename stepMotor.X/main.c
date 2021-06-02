@@ -16,19 +16,19 @@
  *  RD6     |29     | LCD_D6
  *  RD7     |30     | LCD_D7
  * ---------|-------|-------------------------------
- *  RB0     |33     | Teclado Saída   L0
- *  RB1     |34     | Teclado Saída   L1
- *  RB2     |35     | Teclado Saída   L2
- *  RB3     |36     | Teclado Saída   L3
+ *  RB0     |33     | Teclado Saida   L0
+ *  RB1     |34     | Teclado Saida   L1
+ *  RB2     |35     | Teclado Saida   L2
+ *  RB3     |36     | Teclado Saida   L3
  *  RB4     |37     | Teclado Entrada C0
  *  RB5     |38     | Teclado Entrada C1
  *  RB6     |39     | Teclado Entrada C2
  *  RB7     |40     | Teclado Entrada C3
  * -------------------------------------------------
- *  RC0     |15     | Motor de Passo Saída   A+
- *  RC1     |16     | Motor de Passo Saída   B+
- *  RC2     |17     | Motor de Passo Saída   A-
- *  RC3     |18     | Motor de Passo Saída   B-
+ *  RC0     |15     | Motor de Passo Saida   A+
+ *  RC1     |16     | Motor de Passo Saida   B+
+ *  RC2     |17     | Motor de Passo Saida   A-
+ *  RC3     |18     | Motor de Passo Saida   B-
  * -------------------------------------------------
  */
 
@@ -42,14 +42,14 @@
 
 void main(void) 
 {
-    motor_init();
+    motor_init(32);
     
     while( 1 )
     {
-        motor(32, 1);
-        motor(32, 0);
-        motor(32, 1);
-        motor(32, 0); 
+        motor(360, 1, 100);
+        motor(180, 0, 500);
+        motor(360, 1, 100);
+        motor(180, 0, 500); 
     }
     return;
 }

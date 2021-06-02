@@ -10,44 +10,50 @@
 
 #define MOTOR PORTC
 
-void motor_init(void)
+int ppr;
+
+void motor_init(int passos_motor)
 {
     TRISC = 0x00;
     PORTC = 0x00;
+    
+    ppr = passos_motor;
 }
 
+char passointeiro[4] = {0x01, 0x08, 0x04, 0x02};
 
-void motor(int pulsos, int sentido)
+
+void motor(int graus, int sentido, int tempo)
 {
-    pulsos = pulsos / 4;
+    int passos;
+
+    passos = ((graus * ppr)/360 / 4);
+    
     int z;
     int n;
     
-    if(sentido == 0)
+    if(sentido == 1)
     {   
-        for(z = pulsos; z>0; z--)
-        {                
-            char i = 0x01;
-
+        for(z = passos; z>0; z--)
+        {             
             for(n=0; n<4; n++)
             {
-                PORTC = i<<n;
-                __delay_ms(100);
+                PORTC = passointeiro[n];
+                delay(tempo);
             }
         }    
     }   
         
-    if(sentido == 1)    
+    if(sentido == 0)    
     {   
-        for(z = pulsos; z>0; z--)
+        for(z = passos; z>0; z--)
         {
-            char i = 0x08;
-
-            for(n=0; n<4; n++)
+            PORTC = passointeiro[3];
+            
+            for(n=3; n>=0; n--)
             {
-                PORTC = i>>n;
-                __delay_ms(100);
-
+                PORTC = passointeiro[n];
+                delay(tempo);
             }
         }    
     }
